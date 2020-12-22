@@ -9,7 +9,7 @@ import com.upiicsa.pw.p1.Proyecto1.tarea.bean.Tarea;
 public class App 
 {
     public static void main( String[] args ){
-        Proyecto proyecto = new Proyecto("Proyecto1");
+        /*Proyecto proyecto = new Proyecto("Proyecto1");
         proyecto.setCveProyecto("P12020");
         
         
@@ -35,7 +35,7 @@ public class App
         ProyectoBs proyectobs = new ProyectoBs();
         proyectobs.registraProyecto(proyecto);
         proyectobs.registraTareas(proyecto);
-        
+        */
         
         //TareaBs tareabs = new TareaBs();
         //tareabs.agregarTarea(tarea);

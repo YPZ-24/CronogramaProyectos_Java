@@ -6,6 +6,15 @@ import com.upiicsa.pw.p1.Proyecto1.tarea.bd.TareaBd;
 import com.upiicsa.pw.p1.Proyecto1.tarea.bean.Tarea;
 
 public class ProyectoBs {
+	
+	public Proyecto abrirProyecto(String nombreProyecto) {
+		ProyectoBd proyectoBd = new ProyectoBd();
+		TareaBd tareaBd = new TareaBd();
+		
+		Proyecto proyecto = proyectoBd.getProyectoSt(nombreProyecto);
+		proyecto.addTareas(tareaBd.getTareas(nombreProyecto));
+		return proyecto;
+	}
 
 	public void registraProyecto(Proyecto proyecto) {
 		ProyectoBd proyectoBd = new ProyectoBd();
@@ -29,13 +38,6 @@ public class ProyectoBs {
 		return respuesta;
 	}
 	
-	public void registraTareas(Proyecto proyecto) {
-		TareaBd tareabd = new TareaBd();
-		Tarea tarea;
-		for(int i=0; i<proyecto.getTareasSize(); i++) {
-			tarea = proyecto.getTarea(i);
-			tareabd.guardarTarea(tarea);
-		}
-	}
+	
 	
 }

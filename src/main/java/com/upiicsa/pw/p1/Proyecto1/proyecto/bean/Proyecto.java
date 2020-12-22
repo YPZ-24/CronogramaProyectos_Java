@@ -15,8 +15,6 @@ public class Proyecto {
 		tareas = new ArrayList<>();
 	}
 	
-	
-	
 	public int getTareasSize() {
 		return tareas.size();
 	}
@@ -41,6 +39,12 @@ public class Proyecto {
 		boolean respuesta = false;
 		respuesta = tareas.add(tarea);
 		return respuesta;
+	}
+	
+	public boolean addTareas(List<Tarea> tareas) {
+		boolean valid = false;
+		this.tareas = tareas;
+		return valid;
 	}
 	
 	public Tarea getTarea(int position) {

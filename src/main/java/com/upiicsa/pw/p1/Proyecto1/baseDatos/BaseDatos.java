@@ -12,17 +12,25 @@ public class BaseDatos {
 	
 	public Connection connect() {
 		try {
+			Class.forName("org.postgresql.Driver");
 			conn = DriverManager.getConnection(url, user, password);
 			if(conn != null){
 				System.out.println("Connected to db PWD");
 			}else {
 				System.out.println("Fail to cannect with PWD db");
 			}
-		}catch(SQLException e){
+		}catch(SQLException | ClassNotFoundException e){
 				System.out.println(e.getMessage());
-		
 		}
 		return conn;
+	}
+	
+	public void disconnect() {
+		try {
+			conn.close();
+		}catch(SQLException e) {
+			System.out.println("Excepcion: "+e.getMessage());
+		}
 	}
 	
 	
